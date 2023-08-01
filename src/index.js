@@ -9,7 +9,7 @@ import { store } from './Redux/Store/index';
 import axios from 'axios'
 
 // axios.defaults.baseURL = 'http://localhost:3001'
-axios.defaults.baseURL = 'pi-pokemon-backend-production-2ebb.up.railway.app'
+axios.defaults.baseURL = 'https://pi-pokemon-backend-production-2ebb.up.railway.app'
 
 // ReactDOM.render(
   // <React.StrictMode>
@@ -24,13 +24,13 @@ axios.defaults.baseURL = 'pi-pokemon-backend-production-2ebb.up.railway.app'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  //<React.StrictMode>
+  // <React.StrictMode>
   <Provider store={store}>
   <BrowserRouter>
   <App />
   </BrowserRouter>
   </Provider>,
-  //</React.StrictMode>
+  /* </React.StrictMode> */
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
