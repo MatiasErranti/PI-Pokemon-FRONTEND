@@ -4,7 +4,7 @@ import axios from "axios"
 export function postPokemon(info){
     return async function (dispatch) {
         try {
-            await axios.post('/pokemons',info)
+            await axios.post('pokemons',info)
             alert('usuario creado correctamente')
             dispatch({
                 type:POST_POKEMON,
@@ -19,7 +19,7 @@ export function postPokemon(info){
 export function getPokemons(){
     return async function(dispatch){
         try {
-            const response = await axios.get("/pokemons")
+            const response = await axios.get("pokemons")
             dispatch({
                 type:GET_POKEMONS,
                 payload: response.data,
@@ -40,7 +40,7 @@ export function pokemonsPage(info){
 export function filterName(name){
     return async function(dispatch){
         try {
-            const response = await axios.get(`/pokemons?name=${name}`)
+            const response = await axios.get(`pokemons?name=${name}`)
             dispatch({
                 type:FILTER_NAME,
                 payload:response.data,
@@ -53,7 +53,7 @@ export function filterName(name){
 export function getOnePokemon(id){
     return async function(dispatch){
         try {
-            const response = await axios.get(`/pokemons/${id}`)
+            const response = await axios.get(`pokemons/${id}`)
             dispatch({
                 type: GET_ONE_POKEMON,
                 payload:response.data
@@ -89,7 +89,7 @@ export function closeFilter(){
 export function getTypes(){
     return async function(dispatch){
         try {
-            let response = (await axios.get('/types'))
+            let response = (await axios.get('types'))
         response = response.data.sort(function (a, b) {
             return a.name.localeCompare(b.name);})
             dispatch({
